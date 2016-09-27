@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='This is a basic login and registration page using bcrypt'> 
+	<title>Tough Mudder</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	{% load staticfiles %}
+	<link rel='stylesheet' type='text/css', href='{% static "login_registration/styles/style.css" %}'> 
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+    		$( "#datepicker" ).datepicker();
+  		});
+	</script>
+</head>
+<body>
+	<div id='container'>
+		<img class='logo' src='{% static "login_registration/images/logo.png" %}'>
+		<div class='blackBar'></div>
+		<div class='header'>
+			<h1>Tough Mudder</h1>
+		</div>
+		<div class='navBar'>
+			<div>
+			<ul>
+				<a href='#'><li>TOUGH MUDDER HALF</li></a>
+				<a href='#'><li>TOUGH MUDDER</li></a>
+				<a href='#'><li>TOUGHEST MUDDER</li></a>
+				<a href='#'><li>WORLD'S TOUGHEST MUDDER</li></a>
+				<a href='#'><li>FRUIT SHOOT MINI MUDDER</li></a>
+			</ul>
+				
+			</div>
+		</div>
+		<img class='banner' src='{% static "login_registration/images/registration_banner.png" %}'> 
+		<div class='instructions'>
+			<h3>Welcome {{request.session.user.first_name}}!</h3>
+		</div>
+		<div class='main'>
+			<div class='messages'>
+				{% if messages %}
+					{% for message in messages %}
+						<p {% if message.tags %} class='{{message.tags}}' {% endif %}>{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			</div>
+			<div class='userInfo'>
+				<p class='userInfo'><b>Name:</b> {{request.session.user.first_name}} {{request.session.user.last_name}}</p>
+				<p class='userInfo'><b>Email:</b> {{request.session.user.email}}</p>
+				<p class='userInfo'><b>DOB:</b> {{request.session.user.dob}}</p>
+			</div>
+		</div> 	
+	</div>
+</body>
+</html>

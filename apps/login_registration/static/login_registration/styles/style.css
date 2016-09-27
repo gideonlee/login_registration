@@ -1,0 +1,156 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+}
+body {
+	background-color: #f2f2f2;
+}
+div.blackBar {
+	background-color: #1d1e1f;
+	height: 30px;
+}
+div.header {
+	background-color: #ececec;
+	height: 75px;
+	border-bottom: 2px solid #ff6700;
+}
+	img.logo {
+		position: absolute;
+		width: 150px;
+		margin-top: 0px;
+		margin-left: 10px;
+	}
+	div.header h1 {
+		color: #ff6700;
+		margin-top: 0px;
+		padding-top: 15px;
+		font-family: Impact;
+		text-align: center;
+	}
+div.navBar {
+	background-color: #313233;
+	height: 40px;
+	padding-top: 9px;
+	border-bottom: 2px solid grey;
+}	
+	div.navBar ul {
+		list-style-type: none;
+		text-align: center;
+	}
+		div.navBar ul li {
+			display: inline-block;
+			color: white;
+			font-family: Verdana;
+			font-weight: bold;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		div.navBar ul li:hover {
+			color: #ff6700;
+		}
+@media only screen and (min-width: 593px) {
+	div.navBar {
+		background-color: #313233;
+		height: 80px;
+		padding-top: 9px;
+		border-bottom: 2px solid grey;
+	}	
+}
+@media only screen and (min-width: 594px) {
+	div.navBar {
+		background-color: #313233;
+		height: 60px;
+		padding-top: 9px;
+		border-bottom: 2px solid grey;
+	}	
+}
+@media only screen and (min-width: 1151px) {
+	div.navBar {
+		background-color: #313233;
+		height: 40px;
+		padding-top: 9px;
+		border-bottom: 2px solid grey;
+	}	
+}
+img.banner {
+	width: 100%;
+}
+div.instructions {
+	text-align: center;
+	width: 700px;
+}
+div.main {
+	height: 100%;
+	background-color: #d4d4d4;
+	background-image: url('../images/grey_paint.png');
+	background-size: 500px;
+	background-position: 150px 50px;
+	background-repeat: no-repeat;	
+	text-align: center;
+}
+		div.main h2 {
+			font-weight: bold;
+			color: #ff6700;
+			margin-bottom: 20px;
+		}
+		div.main form label {
+			display: inline-block;
+			float: left;
+			clear: left;
+			text-align: right;
+			width: 130px;
+			margin-left: 35px;
+			margin-top: 10px;
+			margin-right: 10px;
+		}
+		div.main form input {
+			display: inline-block;
+			float: left;
+			margin-top: 10px;
+		}
+		div.main input.submit {
+			float: right;
+			margin-right: 72px;
+		}
+	div.main div.registration {
+		width: 420px;
+		display: inline-block;
+		margin-bottom: 50px;
+	}
+	div.main div.login {
+		width: 420px;
+		display: inline-block;
+	}
+	div.main div.messages {
+		height: 150px;
+		width: 500px;
+	}
+	div.main div.form_messages {
+		padding-top: 10px;
+		padding-bottom: 5px;
+		width: 500px;
+		background-color: red;
+		outline: 2px solid black;
+		margin-bottom: 20px;
+	}
+		div.main div.messages p.success {
+			display: inline-block;
+			background-color: lightgreen;
+			outline: 2px solid black;
+			width: 300px;
+			height: 40px;
+			margin-top: 50px;
+			padding-top: 10px;
+		}
+		div.main div.form_messages p.error {
+			color: white;
+			font-weight: bold;
+		}
+	div.main div.userInfo {
+		width: 500px;
+	}
+		div.main p.userInfo {
+			font-size: 16px;
+			margin-bottom: 20px;
+			text-align: left;
+		}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='This is a basic login and registration page using bcrypt'> 
+	<title>Tough Mudder</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	{% load staticfiles %}
+	<link rel='stylesheet' type='text/css', href='{% static "login_registration/styles/style.css" %}'> 
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+    		$( "#datepicker" ).datepicker();
+  		});
+	</script>
+</head>
+<body>
+	<div id='container'>
+		<img class='logo' src='{% static "login_registration/images/logo.png" %}'>
+		<div class='blackBar'></div>
+		<div class='header'>
+			<h1>Tough Mudder</h1>
+		</div>
+		<div class='navBar'>
+			<div>
+			<ul>
+				<a href='#'><li>TOUGH MUDDER HALF</li></a>
+				<a href='#'><li>TOUGH MUDDER</li></a>
+				<a href='#'><li>TOUGHEST MUDDER</li></a>
+				<a href='#'><li>WORLD'S TOUGHEST MUDDER</li></a>
+				<a href='#'><li>FRUIT SHOOT MINI MUDDER</li></a>
+			</ul>
+				
+			</div>
+		</div>
+		<img class='banner' src='{% static "login_registration/images/registration_banner.png" %}'> 
+		<div class='instructions'>
+			<h3>Complete the form below to register for a Tough Mudder event, and get on your way to crossing the finish line and earning that orange headband. Get in there, Mudder.</h3>
+		</div>
+		<div class='main'>
+			<div class='registration'>
+				<h2>Registration</h2>
+				<form class='reg_form' action='{% url "register" %}' method='POST'>
+					{% csrf_token %}
+					<label>First Name:</label><input type='text' name='first_name'>
+					<label>Last Name:</label><input type='text' name='last_name'>
+					<label>Birthday:</label><input type='text' id='datepicker' name='dob'>
+					<label>Email:</label><input type='text' name='email'>
+					<label>Password:</label><input type='password' name='password'>
+					<label>Confirm Password:</label><input type='password' name='confirm_password'>
+					<label></label><input class='submit btn btn-primary' type='submit' value='Register'>
+				</form>										
+			</div>
+
+			<div class='login'>			
+				<h2>Login</h2>
+				<form class='login_form' action='{% url "login" %}' method='POST'>
+					{% csrf_token %}
+					<label>Email:</label><input type='text' name='email'>
+					<label>Password:</label><input type='password' name='password'>
+					<label></label><input class='submit btn btn-primary' type='submit' value='Log In'>
+				</form>
+			</div>
+
+			{% if messages %}
+			<div class='form_messages'>		
+				{% for message in messages %}
+					<p {% if message.tags %} class='{{message.tags}}' {% endif %}>{{message}}</p> 
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div> 	
+	</div>
+</body>
+</html>
